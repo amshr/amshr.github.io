@@ -4,35 +4,17 @@
     <title></title>
 </head>
 <body>
-<img src = "link">
     <script type="application/javascript" src="jquery-1.4.3.min.js"></script>
 
 <script type="text/javascript">
-getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("get", url, true);
-    xhr.responseType = "json";
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status == 200) {
-        callback(null, xhr.response);
-      } else {
-        callback(status);
-      }
-    };
-    xhr.send();
-};
-
-getJSON("https://itunes.apple.com/search?term=jack+johnson+breakdown&limit=1",
-function(err, data) {
-  if (err != null) {
-    alert("Something went wrong: " + err);
-  } else {
-    alert("Your query count: " + data.query.count);
-  }
-var returnLink = data[0].artworkUrl100
-document.getElementById("banner-img").innerHTML=returnLink;});
-
+$.getJSON('https://itunes.apple.com/search?term=jack+johnson+breakdown&limit=1',
+function(data)
+{
+            var src = data[0].artworkURL100,
+            img = document.createElement('img');
+            img.src = src;
+            document.body.appendChild(img);
+});
 </script>
 </body>
 </html>
