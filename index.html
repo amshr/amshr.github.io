@@ -11,9 +11,20 @@
     <script type="text/javascript">
       var dataReceiver = function(response) {
         console.log(response);
-        window.data = response.results[0].artworkUrl100;
-        window.song = response.results[0].trackName;
-        window.artist = response.results[0].artistName;
+        var string = "";
+        var oldstring = response.results[0].artworkUrl100;
+        for (i = 0; i < oldstring.length; i++) { 
+            if(i + 2 < oldstring.length && oldstring[i] == "1" && oldstring[i+1] == "0" && oldstring[i+2] == "0"){
+                string += "10";
+            } else {
+                string += oldstring[i];
+            }
+
+        }
+
+        response.results[0].artworkUrl100 = string;
+        window.data = response.results[0];
+
       }
     </script>
     <script src="https://itunes.apple.com/search?term=kanye+west+heartless&limit=1&callback=dataReceiver"></script>
@@ -21,7 +32,10 @@
 
   <body ng-controller="MainCtrl">
     <div>
-      <img src = {{data}} />
+      <img src = {{data.artworkUrl100}} />
+      <p style="font-family: Proxima-Nova, Arial">{{data.trackName}} |
+      {{data.artistName}}</p>
+
     </div>
   </body>
 
