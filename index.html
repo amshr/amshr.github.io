@@ -9,13 +9,12 @@
 <script type="text/javascript">
 $.getJSON('https://itunes.apple.com/search?term=jack+johnson+breakdown&limit=1',
 function(data)
-{
+{    window.alert(5+6)
+
     window.alert(data)
-            var src = data[0].artworkUrl100,
-            img = document.createElement('img');
-            img.src = src;
-            document.body.appendChild(img);
-});
+            var img = $('<img />', {src : 'http://www.fillmurray.com/200/300'});
+        img.appendTo('body');
+    });
 </script>
 </body>
 </html>
