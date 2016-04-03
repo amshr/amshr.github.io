@@ -1,12 +1,24 @@
-<script>
-(function() {
-  var cx = 'YOUR_ENGINE_ID';
-  var gcse = document.createElement('script');
-  gcse.type = 'text/javascript';
-  gcse.async = true;
-  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(gcse, s);
-})();
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'hu'});
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {
+        enableImageSearch: true,
+        imageSearchOptions: {
+              layout: google.search.ImageSearch.LAYOUT_CLASSIC
+        }
+    };
+
+    var options = new google.search.DrawOptions();
+    options.setAutoComplete(true);
+
+    var customSearchControl = new google.search.CustomSearchControl('XXX', customSearchOptions);
+
+    customSearchControl.setResultSetSize(google.search.Search.LARGE_RESULTSET);
+    customSearchControl.setAutoCompletionId('XXX');
+
+    customSearchControl.draw('cse', options);
+  }, true);
 </script>
-<gcse:searchresults-only></gcse:searchresults-only>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
