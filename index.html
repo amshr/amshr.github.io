@@ -28,8 +28,9 @@ function(err, data) {
   } else {
     alert("Your query count: " + data.query.count);
   }
-});
-"link" = data[0].artworkUrl100
+var returnLink = data[0].artworkUrl100
+document.getElementById("banner-img").innerHTML=returnLink;});
+
 </script>
 </body>
 </html>
