@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <script type="application/javascript" src="jquery-1.4.3.min.js"></script>
+<html ng-app="plunker">
 
-<script type="text/javascript">
-window.alert(5+63)
-$.getJSON('https://itunes.apple.com/search?term=jack+johnson+breakdown&limit=1',
-function(data)
-{    window.alert(5+6)
+  <head>
+    <meta charset="utf-8" />
+    <title>Akhi</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.15/angular.js" data-semver="1.3.15"></script>
+    <script src="app.js"></script>
+    <script type="text/javascript">
+      var dataReceiver = function(response) {
+        console.log(response);
+        window.data = response.results[0].artworkUrl100;
+      }
+    </script>
+    <script src="https://itunes.apple.com/search?term=jack+johnson+breakdown&limit=1&callback=dataReceiver"></script>
+  </head>
 
-    window.alert(data)
-            var img = $('<img />', {src : 'http://www.fillmurray.com/200/300'});
-        img.appendTo('body');
-    });
-</script>
-</body>
+  <body ng-controller="MainCtrl">
+    <div>
+      <img src = {{data}} />
+    </div>
+  </body>
+
 </html>
