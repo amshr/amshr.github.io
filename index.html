@@ -4,7 +4,7 @@
     <title></title>
 </head>
 <body>
-<p>link</p>
+<img src = "link">
 <script>
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
@@ -29,8 +29,7 @@ function(err, data) {
     alert("Your query count: " + data.query.count);
   }
 });
-"link" = data.artworkUrl100
-alert("link")
+"link" = data[0].artworkUrl100
 </script>
 </body>
 </html>
