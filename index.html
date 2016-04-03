@@ -12,9 +12,11 @@
       var dataReceiver = function(response) {
         console.log(response);
         window.data = response.results[0].artworkUrl100;
+        window.song = response.results[0].trackName;
+        window.artist = response.results[0].artistName;
       }
     </script>
-    <script src="https://itunes.apple.com/search?term=jack+johnson+breakdown&limit=1&callback=dataReceiver"></script>
+    <script src="https://itunes.apple.com/search?term=kanye+west+heartless&limit=1&callback=dataReceiver"></script>
   </head>
 
   <body ng-controller="MainCtrl">
