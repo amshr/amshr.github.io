@@ -14,6 +14,13 @@
     font-family: proxima-nova, sans-serif;color:white;
     padding-left: 100px;
     font-weight: 900
+    text-decoration: none;
+    }
+    a {
+    font-family: proxima-nova, sans-serif;color:white;
+    padding-left: 100px;
+    font-weight: 900
+    text-decoration: none;
     }
     </style>
 
@@ -46,7 +53,7 @@
   <body ng-controller="MainCtrl">
     <div>
       <img src = {{data.artworkUrl100}} />
-      <p>{{data.trackName.toUpperCase()}} |
+      <p><a href = {{data.trackViewUrl}}>{{data.trackName.toUpperCase()}}</a> |
       {{data.artistName.toUpperCase()}}</p>
 
     </div>
