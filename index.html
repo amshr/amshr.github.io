@@ -5,8 +5,10 @@
 </head>
 <body>
 <img src = "link">
+    <script type="application/javascript" src="jquery-1.4.3.min.js"></script>
+
 <script type="text/javascript">
-var getJSON = function(url, callback) {
+getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("get", url, true);
     xhr.responseType = "json";
