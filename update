@@ -2,10 +2,11 @@
 ./gupdate
 rm index.html
 mv newindex.html index.html
+git commit -m "New Song"
 git push origin master
 expect "Username for 'https://github.com':"
 send "amshr"
 expect "Password for 'https://amshr@github.com':"
-send "asdfghjkl;'1"
+send "1asdfghjkl;'"
 EOD
 echo "yay"
