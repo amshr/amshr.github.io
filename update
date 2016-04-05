@@ -6,9 +6,9 @@ git add .
 read -p "Commit description: " desc  
 git commit -m "$desc"  
 git push origin master
-expect "Username for 'https://github.com':"
-send "amshr"
-expect "Password for 'https://amshr@github.com':"
-send "1asdfghjkl;'"
-EOD
-echo "yay"
+# expect "Username for 'https://github.com':"
+# send "amshr"
+# expect "Password for 'https://amshr@github.com':"
+# send "1asdfghjkl;'"
+# EOD
+# echo "yay"
