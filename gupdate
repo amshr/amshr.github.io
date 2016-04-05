@@ -1,0 +1,11 @@
+#!/usr/bin/python
+album = raw_input("what song are you listening to?")
+album = album.replace(" ","+")
+newurl = "https://itunes.apple.com/search?term=" + album + "&limit=1&callback=dataReceiver"
+line49 = '\t<script src="' + newurl + '"></script>\n'
+f = list(open('index.html','r'))
+f[49] = line49
+f2 = open('newindex.html','w')
+for line in f:
+	f2.write(line)
+
