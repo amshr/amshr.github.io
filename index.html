@@ -12,15 +12,24 @@
     <style>
     p {
     font-family: proxima-nova, sans-serif;color:white;
-    /*padding-left: 100px;*/
-    font-weight: 900
+    font-weight: 900;
     text-decoration: none;
+    text-align: center;
+    padding-top: 420px;
+
     }
     a {
     font-family: proxima-nova, sans-serif;color:white;
-    /*padding-left: 100px;*/
-    font-weight: 900
+    font-weight: 900;
     text-decoration: none;
+    text-align: center;
+    margin-left: -80px;
+
+    }
+    .centered {
+      position: fixed;
+      left: 50%;
+      margin-left: -200px;
     }
     </style>
 
@@ -47,12 +56,12 @@
 
       }
     </script>
-	<script src="https://itunes.apple.com/search?term=Lord+Knows+Creed&limit=1&callback=dataReceiver"></script>
+	<script src="https://itunes.apple.com/search?term=Andrew+Bird+Fake+Palindromes&limit=1&callback=dataReceiver"></script>
   </head>
 
   <body ng-controller = "MainCtrl">
     <div>
-      <img src = {{data.artworkUrl100}} />
+      <img class = "centered" src = {{data.artworkUrl100}} />
       <p><a href = {{data.trackViewUrl}}>{{data.trackName.toUpperCase()}}</a> |
       {{data.artistName.toUpperCase()}}</p>
 
