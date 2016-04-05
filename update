@@ -2,6 +2,7 @@
 ./gupdate
 rm index.html
 mv newindex.html index.html
+git add -a
 git commit -m "New Song"
 git push origin master
 expect "Username for 'https://github.com':"
