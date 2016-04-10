@@ -6,8 +6,6 @@ elif file[0] != "!@#":
 	album = file[0]
 	f1 = open('song', 'w')
 	f1.write("!@#" + '\n')
-	#print(f1)
-print(album)
 album = album.replace(" ","+")
 newurl = "https://itunes.apple.com/search?term=" + album + "&limit=1&callback=dataReceiver"
 line53 = '\t<script src="' + newurl + '"></script>\n'
