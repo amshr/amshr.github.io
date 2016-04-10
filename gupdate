@@ -1,6 +1,6 @@
 #!/usr/bin/python
 file = list(open('song', 'r'))
-if file[0] == "!" and file[0][1] == "@" and file[0][2] == "#":
+if file[0][0] == "!" and file[0][1] == "@" and file[0][2] == "#":
 	album = raw_input("what song are you listening to?")
 elif file[0] != "!@#":
 	album = file[0]
