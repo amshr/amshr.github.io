@@ -1,42 +1,30 @@
-<!DOCTYPE html>
-<html ng-app="plunker">
-
-  <head>
-    <meta charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
-    <title>Tools</title>
-    <style>
-    p {
-    font-family: proxima-nova, avenir, sans-serif;color:white;
-    font-weight: 900;
-    text-decoration: none;
-    text-align: center;
-    padding-top: 420px;
-    }
-    a {
-    font-family: proxima-nova, avenir, sans-serif;color:white;
-    font-weight: 900;
-    text-decoration: none;
-    text-align: center;
-    margin-left: -80px;
-    }
-    body {
-      background-color: #162252
-    }
-    .centered {
-      position: fixed;
-      left: 50%;
-      margin-left: -200px;
-    }
-    </style>
-
-  </head>
-
-  <body ng-controller = "MainCtrl">
-    <div>
-      <p>AKHI</p>
-
-    </div>
-  </body>
-
-</html> 
+<!DOCTYPE html> <!--Sets the document type to HTML-->
+<html> <!--Now we begin describing the web page-->
+<script> <!-- We are using inline javascript. That is Javascript inside HTML //-->
+  var note, html, timeout; <!-- Set the variables //-->
+  window.addEventListener('load', function() {
+    note = document.getElementById('note');
+    html = document.getElementsByTagName('html')[0];
+    html.addEventListener('keyup', function(ev) {
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(saveNote, 100);
+    });
+  restoreNote();
+	note.focus();
+  });
+  function saveNote() {
+    localStorage.note = note.innerText;
+	timeout = null;
+  }
+  function restoreNote() {
+    note.innerText = localStorage.note || '';
+  }
+</script>
+<h1>Quick Notepad</h1>
+<p id="note" contenteditable></p>
+<style> /*This begins our styling*/
+  html,body { height: 100%; } /*Gives our page the maximum height*/
+  #note { width: 100%; height: 100%; font-family: Garamond; text-align: left} /*Gives our note box a maximum height and width. Plus aligns text to the left and sets font to Garamond.*/
+  h1 {text-align: center; font-family: Arial} /*Centers our title and sets font to Arial*/
+</style>
+</html>
